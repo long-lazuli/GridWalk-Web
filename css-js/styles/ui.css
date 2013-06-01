@@ -1,0 +1,355 @@
+* {
+	box-sizing: border-box;
+}
+html {
+	height: 100%;
+}
+body {
+	background-color: #666;
+	height: 100%;
+	overflow: hidden;
+}
+
+.ui-box { 
+	background-color: #999;
+	border: 0;
+	bottom: 0;
+	height: 450px; 
+	
+	left: 0; 
+	margin: auto;	
+	padding: 0;
+	position: absolute; 
+	right: 0;
+	text-align: center; 
+	top: 0;
+	white-space: nowrap; 
+	width: 450px;
+	z-index: 2;
+
+}
+
+
+.ui-box > input { cursor: pointer; text-align: center; display: inline-block; height: 2em; line-height: 100%; margin: 0; opacity: 0; position: absolute; text-align: center; width: 2em; z-index: 32; }
+/*.ui-box > input:before {
+	content: attr(id);
+	display: block;
+	position: absolute;
+}*/
+
+.ui-box > .ui-body {
+	border: none;
+	display: block;
+	height: 100%;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	transition-duration: 250ms;
+	transition-property: margin-left, margin-top, transform;
+	/* to make a non linear effect : */
+	transition-timing-function: ease-in, ease-out, ease-in-out;
+	width: 100%;
+	z-index: 4;
+}
+.ui-box > .ui-body > label {
+	display: table-cell;
+	box-sizing: border-box;
+	height: 100%;
+	margin: 0;
+	position: absolute;
+	text-align: center;
+	transition-duration: 50ms;
+	transition-property: opacity;
+	transition-timing-function: ease;
+	vertical-align: middle;
+	width: 100%;
+	z-index: 8;
+	padding: 0;
+}
+
+.ui-box > .ui-body > label > h3,
+.ui-box > .ui-body > label:empty:before,
+.ui-box > .ui-body > label > p,
+.ui-box > .ui-body > label:empty:after {
+	box-sizing: border-box;
+	display: block;
+	padding: 0.5em 1em;
+	width: calc(100% -2em);
+	max-width: calc(100% -2em);
+	max-height: calc(100% -2em);
+	white-space: normal;
+}
+.ui-box > .ui-body > label > h3,
+.ui-box > .ui-body > label:empty:before {
+	content: attr(for);
+	font-weight: bold;
+	font-size: 1.2em;
+	margin: 1em 1em 0;
+	border: 2px dotted #999;
+	border-radius: 1em;
+	box-shadow: inset -1em -1em 1em rgba(153, 153, 153, 0.25);
+}
+.ui-box > .ui-body > label > p,
+.ui-box > .ui-body > label:empty:after {
+	content: attr(class);
+	margin: 0 1.2em 1.2em;
+}
+
+
+/* légendes : */
+	/* colonnes : */
+		.ui-box > input.ui-col-1 {		margin-left: 0;}
+		.ui-box > input.ui-col-2 {		margin-left: 2em;}
+		.ui-box > input.ui-col-3 {		margin-left: 4em;}
+		.ui-box > input.ui-col-4 {		margin-left: 6em;}
+		.ui-box > input.ui-col-5 {		margin-left: 8em;}
+		.ui-box > input.ui-col-6 {		margin-left: 10em;}
+		.ui-box > input.ui-col-7 {		margin-left: 12em;}
+		.ui-box > input.ui-col-8 {		margin-left: 14em;}
+		.ui-box > input.ui-col-9 {		margin-left: 16em;}
+		.ui-box > input.ui-col-10 {		margin-left: 18em;}
+		.ui-box > input.ui-col-11 {		margin-left: 20em;}
+		.ui-box > input.ui-col-12 {		margin-left: 22em;}
+
+	/* lignes : */
+		.ui-box > input.ui-row-1 {		margin-top: 0;}
+		.ui-box > input.ui-row-2 {		margin-top: 2em;}
+		.ui-box > input.ui-row-3 {		margin-top: 4em;}
+		.ui-box > input.ui-row-4 {		margin-top: 6em;}
+		.ui-box > input.ui-row-5 {		margin-top: 8em;}
+		.ui-box > input.ui-row-6 {		margin-top: 10em;}
+		.ui-box > input.ui-row-7 {		margin-top: 12em;}
+		.ui-box > input.ui-row-8 {		margin-top: 14em;}
+		.ui-box > input.ui-row-9 {		margin-top: 16em;}
+		.ui-box > input.ui-row-10 {		margin-top: 18em;}
+		.ui-box > input.ui-row-11 {		margin-top: 20em;}
+		.ui-box > input.ui-row-12 {		margin-top: 22em;}
+
+/* layouts : */
+	/* colonnes : */
+		.ui-box > .ui-body > label.ui-col-1 {	left: 0;}
+		.ui-box > .ui-body > label.ui-col-2 {	left: 100%;}
+		.ui-box > .ui-body > label.ui-col-3 {	left: 200%;}
+		.ui-box > .ui-body > label.ui-col-4 {	left: 300%;}
+		.ui-box > .ui-body > label.ui-col-5 {	left: 400%;}
+		.ui-box > .ui-body > label.ui-col-6 {	left: 500%;}
+		.ui-box > .ui-body > label.ui-col-7 {	left: 600%;}
+		.ui-box > .ui-body > label.ui-col-8 {	left: 700%;}
+		.ui-box > .ui-body > label.ui-col-9 {	left: 800%;}
+		.ui-box > .ui-body > label.ui-col-10 {	left: 900%;}
+		.ui-box > .ui-body > label.ui-col-11 {	left: 1000%;}
+		.ui-box > .ui-body > label.ui-col-12 {	left: 1100%;}
+
+	/* lignes : */
+		.ui-box > .ui-body > label.ui-row-1 {	top: 0;}
+		.ui-box > .ui-body > label.ui-row-2 {	top: 100%;}
+		.ui-box > .ui-body > label.ui-row-3 {	top: 200%;}
+		.ui-box > .ui-body > label.ui-row-4 {	top: 300%;}
+		.ui-box > .ui-body > label.ui-row-5 {	top: 400%;}
+		.ui-box > .ui-body > label.ui-row-6 {	top: 500%;}
+		.ui-box > .ui-body > label.ui-row-7 {	top: 600%;}
+		.ui-box > .ui-body > label.ui-row-8 {	top: 700%;}
+		.ui-box > .ui-body > label.ui-row-9 {	top: 800%;}
+		.ui-box > .ui-body > label.ui-row-10 {	top: 900%;}
+		.ui-box > .ui-body > label.ui-row-11 {	top: 1000%;}
+		.ui-box > .ui-body > label.ui-row-12 {	top: 1100%;}
+
+
+.ui-box[data-legend] > input {
+	opacity: 1;
+}
+
+
+/* placement de la legend : */
+	.ui-box > input,
+	.ui-box[data-legend-position*="left"] > input {							left: 0;}
+
+	.ui-box > input,
+	.ui-box[data-legend-position*="top"] > input {							top: 0;}
+
+
+	.ui-box[data-legend-position*="center"] > input {						left:	calc(  50%	- 1em);}
+	.ui-box[data-legend-position*="middle"] > input {						top:	calc(  50%	- 1em);}
+	.ui-box[data-legend-position*="bottom"] > input {						top:	calc( 100%	- 2em);}
+
+
+	.ui-box[data-box-cols="2"][data-legend-position*="center"]	> input {	left:	calc(  50%	-  2em);}
+	.ui-box[data-box-cols="2"][data-legend-position*="right"]	> input {	left:	calc( 100%	-  4em);}
+	.ui-box[data-box-rows="2"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  2em);}
+	.ui-box[data-box-rows="2"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	-  4em);}
+
+	.ui-box[data-box-cols="3"][data-legend-position*="center"]	> input {	left:	calc(  50%	-  3em);}
+	.ui-box[data-box-cols="3"][data-legend-position*="right"]	> input {	left:	calc( 100%	-  6em);}
+	.ui-box[data-box-rows="3"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  3em);}
+	.ui-box[data-box-rows="3"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	-  6em);}
+
+	.ui-box[data-box-cols="4"][data-legend-position*="center"]	> input {	left:	calc(  50%	-  4em);}
+	.ui-box[data-box-cols="4"][data-legend-position*="right"]	> input {	left:	calc( 100%	-  8em);}
+	.ui-box[data-box-rows="4"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  4em);}
+	.ui-box[data-box-rows="4"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	-  8em);}
+
+	.ui-box[data-box-cols="5"][data-legend-position*="center"]	> input {	left:	calc(  50%	-  5em);}
+	.ui-box[data-box-cols="5"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 10em);}
+	.ui-box[data-box-rows="5"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  5em);}
+	.ui-box[data-box-rows="5"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 10em);}
+
+	.ui-box[data-box-cols="6"][data-legend-position*="center"]	> input {	left:	calc(  50%	-  6em);}
+	.ui-box[data-box-cols="6"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 12em);}
+	.ui-box[data-box-rows="6"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  6em);}
+	.ui-box[data-box-rows="6"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 12em);}
+
+	.ui-box[data-box-cols="7"][data-legend-position*="center"]	> input {	left:	calc(  50%	-  7em);}
+	.ui-box[data-box-cols="7"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 14em);}
+	.ui-box[data-box-rows="7"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  7em);}
+	.ui-box[data-box-rows="7"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 14em);}
+
+	.ui-box[data-box-cols="8"][data-legend-position*="center"]	> input {	left:	calc(  50%	-  8em);}
+	.ui-box[data-box-cols="8"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 16em);}
+	.ui-box[data-box-rows="8"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  8em);}
+	.ui-box[data-box-rows="8"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 16em);}
+
+	.ui-box[data-box-cols="9"][data-legend-position*="center"]	> input {	left:	calc(  50%	-  9em);}
+	.ui-box[data-box-cols="9"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 18em);}
+	.ui-box[data-box-rows="9"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  9em);}
+	.ui-box[data-box-rows="9"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 18em);}
+
+	.ui-box[data-box-cols="10"][data-legend-position*="center"]	> input {	left:	calc(  50%	- 10em);}
+	.ui-box[data-box-cols="10"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 20em);}
+	.ui-box[data-box-rows="10"][data-legend-position*="middle"]	> input {	top:	calc(  50%	- 10em);}
+	.ui-box[data-box-rows="10"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 20em);}
+
+	.ui-box[data-box-cols="11"][data-legend-position*="center"]	> input {	left:	calc(  50%	- 11em);}
+	.ui-box[data-box-cols="11"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 22em);}
+	.ui-box[data-box-rows="11"][data-legend-position*="middle"]	> input {	top:	calc(  50%	- 11em);}
+	.ui-box[data-box-rows="11"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 22em);}
+
+	.ui-box[data-box-cols="12"][data-legend-position*="center"]	> input {	left:	calc(  50%	- 12em);}
+	.ui-box[data-box-cols="12"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 24em);}
+	.ui-box[data-box-rows="12"][data-legend-position*="middle"]	> input {	top:	calc(  50%	- 12em);}
+	.ui-box[data-box-rows="12"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 24em);}
+
+
+/* position avec les radio : */
+	.ui-box > .ui-col-1:checked ~ .ui-body  {	margin-left:	 0;}
+	.ui-box > .ui-col-2:checked ~ .ui-body {	margin-left:  -100%;}
+	.ui-box > .ui-col-3:checked ~ .ui-body {	margin-left:  -200%;}
+	.ui-box > .ui-col-4:checked ~ .ui-body {	margin-left:  -300%;}
+	.ui-box > .ui-col-5:checked ~ .ui-body {	margin-left:  -400%;}
+	.ui-box > .ui-col-6:checked ~ .ui-body {	margin-left:  -500%;}
+	.ui-box > .ui-col-7:checked ~ .ui-body {	margin-left:  -600%;}
+	.ui-box > .ui-col-8:checked ~ .ui-body {	margin-left:  -700%;}
+	.ui-box > .ui-col-9:checked ~ .ui-body  {	margin-left:  -800%;}
+	.ui-box > .ui-col-10:checked ~ .ui-body {	margin-left:  -900%;}
+	.ui-box > .ui-col-11:checked ~ .ui-body {	margin-left: -1000%;}
+	.ui-box > .ui-col-12:checked ~ .ui-body {	margin-left: -1100%;}
+
+	.ui-box > .ui-row-1:checked ~ .ui-body {	margin-top:		 0;}
+	.ui-box > .ui-row-2:checked ~ .ui-body {	margin-top:   -100%;}
+	.ui-box > .ui-row-3:checked ~ .ui-body {	margin-top:   -200%;}
+	.ui-box > .ui-row-4:checked ~ .ui-body {	margin-top:   -300%;}
+	.ui-box > .ui-row-5:checked ~ .ui-body {	margin-top:   -400%;}
+	.ui-box > .ui-row-6:checked ~ .ui-body {	margin-top:   -500%;}
+	.ui-box > .ui-row-7:checked ~ .ui-body {	margin-top:   -600%;}
+	.ui-box > .ui-row-8:checked ~ .ui-body {	margin-top:   -700%;}
+	.ui-box > .ui-row-9:checked ~ .ui-body  {	margin-top:   -800%;}
+	.ui-box > .ui-row-10:checked ~ .ui-body {	margin-top:   -900%;}
+	.ui-box > .ui-row-11:checked ~ .ui-body {	margin-top:  -1000%;}
+	.ui-box > .ui-row-12:checked ~ .ui-body {	margin-top:  -1100%;}
+
+.ui-body > label{
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: rgba(0, 0, 0, 0);
+	cursor: pointer;
+	transition-duration: 100ms;
+	transition-property: transform ;
+	transition-timing-function: ease;
+}
+
+.ui-body > label,
+.ui-body > label:active ~ .ui-body > label.active,
+.ui-body > label:hover ~ .ui-body > label.active {
+	border: 2px dashed rgba(0, 0, 0, 0.25);
+}
+
+.ui-body > label:active
+{
+	opacity: 1;
+	transform:	scale(1.2)
+				rotate(-10deg);
+	box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.5);
+	z-index: 256;
+}
+.ui-body > label:active:hover > *
+.ui-body > label:active > *
+{
+	opacity: 1;
+}
+
+
+.ui-body > label > *{
+	opacity: 0;
+	transition-duration: 50ms;
+	transition-property: opacity;
+	transition-timing-function: ease;
+}
+
+.ui-body > label:hover{
+	border-color: rgba(0, 0, 0, 0.75);
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.ui-body > label:hover > *{
+	opacity: 0.5;
+}
+.ui-body > label.active{
+}
+
+.ui-body > label.active {
+	border: 2px solid #000;
+	opacity: 1;
+	z-index: 128;
+	color: #000;
+	cursor: default;
+}
+
+.ui-body > label.active > * {
+	opacity: 1!important;
+}
+
+
+
+
+
+/* -------------------------------------------------------------------- */
+
+
+
+
+.ui-box > input.ui-rotate-90:checked ~ .ui-body {	transform: rotate( 90deg);	}
+.ui-box > input.ui-rotate-180:checked ~ .ui-body {	transform: rotate(180deg);	}
+.ui-box > input.ui-rotate-270:checked ~ .ui-body {	transform: rotate(270deg);	}
+.ui-box > input.ui-rotate-360:checked ~ .ui-body {	transform: rotate(360deg);	}
+
+.ui-body > label.ui-rotate-90 {		transform: rotate( -90deg);	}
+.ui-body > label.ui-rotate-180 {	transform: rotate(-180deg);	}
+.ui-body > label.ui-rotate-270 {	transform: rotate(-270deg);	}
+.ui-body > label.ui-rotate-360 {	transform: rotate(-360deg);	}
+
+.ui-box > input.ui-rotate-90:checked ~ .ui-body { transform-origin: 250% 350%;}
+.ui-box > input.ui-rotate-180:checked ~ .ui-body { transform-origin: 250% 450%;}
+.ui-box > input.ui-rotate-270:checked ~ .ui-body { transform-origin: 350% 350%;}
+
+.ui-box[data-box-rows="3"] > input.ui-rotate-90:checked ~ .ui-body { transform-origin: 150% 150%;}
+.ui-box[data-box-rows="3"] > input.ui-rotate-180:checked ~ .ui-body { transform-origin: 150% 200%;}
+.ui-box[data-box-rows="3"] > input.ui-rotate-270:checked ~ .ui-body { transform-origin: 50% 250%;}
+
+.ui-box[data-box-rows="4"] > input.ui-rotate-90:checked ~ .ui-body { transform-origin: 250% 350%;}
+.ui-box[data-box-rows="4"] > input.ui-rotate-180:checked ~ .ui-body { transform-origin: 250% 450%;}
+.ui-box[data-box-rows="4"] > input.ui-rotate-270:checked ~ .ui-body { transform-origin: 350% 350%;}
+
+.ui-box[data-box-rows="5"] > input.ui-rotate-90:checked ~ .ui-body { transform-origin: 250% 350%;}
+.ui-box[data-box-rows="5"] > input.ui-rotate-180:checked ~ .ui-body { transform-origin: 250% 450%;}
+.ui-box[data-box-rows="5"] > input.ui-rotate-270:checked ~ .ui-body { transform-origin: 350% 350%;}

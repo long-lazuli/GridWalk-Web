@@ -1,0 +1,19 @@
+.color-100-white {	background-color: hsla( 0, 0%, 80%, 1 );}
+
+.color-75-1from4 {	background-color: hsla( 350, 30%, 70%, 0.75 );}
+.color-75-2from4 {	background-color: hsla(  80, 30%, 70%, 0.75 );}
+.color-75-3from4 {	background-color: hsla( 170, 30%, 70%, 0.75 );}
+.color-75-4from4 {	background-color: hsla( 260, 30%, 70%, 0.75 );}
+
+.color-50-1from8 {	background-color: hsla( 305, 45%, 60%, 0.5 );}
+.color-50-2from8,
+.color-50-1from4 {	background-color: hsla( 350, 45%, 60%, 0.5 );}
+.color-50-3from8 {	background-color: hsla(  35, 45%, 60%, 0.5 );}
+.color-50-4from8,
+.color-50-2from4 {	background-color: hsla(  80, 45%, 60%, 0.5 );}
+.color-50-5from8 {	background-color: hsla( 125, 45%, 60%, 0.5 );}
+.color-50-6from8,
+.color-50-3from4 {	background-color: hsla( 170, 45%, 60%, 0.5 );}
+.color-50-7from8 {	background-color: hsla( 215, 45%, 60%, 0.5 );}
+.color-50-8from8,
+.color-50-4from4 {	background-color: hsla( 260, 45%, 60%, 0.5 );}
