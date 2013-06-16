@@ -2,11 +2,16 @@
 	font-family: sans-serif;
 }
 
-label[for="Demo"] {		background-color: 	#DFF;}
+*[for="Demo"] {		background-color: 	#BFF;}
+*[for="Home"] {		background-color: 	#FFB;}
+*[for="Doc"] {		background-color: 	#FBF;}
+*[for="Links"] {		background-color: 	#DDF;}
 
-label[for="Home"] {		background-color: 	#FFD;}
-
-label[for="Doc"] {		background-color: 	#FDF;}
+.ui-body > a {
+	line-height: 100%;
+	text-align: center;
+	border-radius: 50%;
+}
 
 body {
 	background-color: #666;
@@ -14,9 +19,10 @@ body {
 h1 {
 	text-align: center;
 }
-h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
+h1 > *, h2 > *, h3 > *, h4 > *, h5 > *, h6 > * {
 	color: inherit;
 	text-decoration: inherit;
+	display: inline;
 }
 
 label {
@@ -50,4 +56,13 @@ label p {
 label p {
 	padding-left: 1em;
 	padding-right: 1em;
+}
+
+.hovering {
+    position: absolute;
+    z-index: 512;
+}
+.centered {
+	margin-left: 50%;
+    transform: translate(-50%, 0px);
 }
