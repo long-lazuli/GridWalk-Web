@@ -1,4 +1,6 @@
-
+* {
+	font-family: sans-serif;
+}
 
 label[for="Demo"] {		background-color: 	#DFF;}
 
