@@ -165,92 +165,92 @@ body {
 
 
 /* placement de la legend : */
-	.ui-box[data-legend-position*="left"] > input {								left: 0;}
-	.ui-box[data-legend-position*="top"] > input {								top: 0;}
+	.ui-box[data-legend-pos*="left"] > input {								left: 0;}
+	.ui-box[data-legend-pos*="top"] > input {								top: 0;}
 
 	.ui-box > input,
-	.ui-box[data-legend-position*="center"] > input {							left: calc(50% - 1em);}
-	.ui-box[data-legend-position*="right"] > input {							left: calc(100% - 2em);}
+	.ui-box[data-legend-pos*="center"] > input {							left: calc(50% - 1em);}
+	.ui-box[data-legend-pos*="right"] > input {							left: calc(100% - 2em);}
 	.ui-box > input,
-	.ui-box[data-legend-position*="middle"] > input {							top: calc(50% - 1em);}
-	.ui-box[data-legend-position*="bottom"] > input {							top: calc(100% - 2em);}
+	.ui-box[data-legend-pos*="middle"] > input {							top: calc(50% - 1em);}
+	.ui-box[data-legend-pos*="bottom"] > input {							top: calc(100% - 2em);}
 
 	.ui-box[data-box-cols="2"] > input,
-	.ui-box[data-box-cols="2"][data-legend-position*="center"] > input {	left: calc(50% - 2em);}
-	.ui-box[data-box-cols="2"][data-legend-position*="right"] > input {		left: calc(100% - 4em);}
+	.ui-box[data-box-cols="2"][data-legend-pos*="center"] > input {	left: calc(50% - 2em);}
+	.ui-box[data-box-cols="2"][data-legend-pos*="right"] > input {		left: calc(100% - 4em);}
 	.ui-box[data-box-rows="2"] > input,
-	.ui-box[data-box-rows="2"][data-legend-position*="middle"] > input {	top: calc(50% - 2em);}
-	.ui-box[data-box-rows="2"][data-legend-position*="bottom"] > input {	top: calc(100% - 4em);}
+	.ui-box[data-box-rows="2"][data-legend-pos*="middle"] > input {	top: calc(50% - 2em);}
+	.ui-box[data-box-rows="2"][data-legend-pos*="bottom"] > input {	top: calc(100% - 4em);}
 
 	.ui-box[data-box-cols="3"] > input,
-	.ui-box[data-box-cols="3"][data-legend-position*="center"] > input {	left: calc(50% - 3em);}
-	.ui-box[data-box-cols="3"][data-legend-position*="right"] > input {		left: calc(100% - 6em);}
+	.ui-box[data-box-cols="3"][data-legend-pos*="center"] > input {	left: calc(50% - 3em);}
+	.ui-box[data-box-cols="3"][data-legend-pos*="right"] > input {		left: calc(100% - 6em);}
 	.ui-box[data-box-rows="3"] > input,
-	.ui-box[data-box-rows="3"][data-legend-position*="middle"] > input {	top: calc(50% - 3em);}
-	.ui-box[data-box-rows="3"][data-legend-position*="bottom"] > input {	top: calc(100% - 6em);}
+	.ui-box[data-box-rows="3"][data-legend-pos*="middle"] > input {	top: calc(50% - 3em);}
+	.ui-box[data-box-rows="3"][data-legend-pos*="bottom"] > input {	top: calc(100% - 6em);}
 
 	.ui-box[data-box-cols="4"] > input,
-	.ui-box[data-box-cols="4"][data-legend-position*="center"] > input {	left: calc(50% - 4em);}
-	.ui-box[data-box-cols="4"][data-legend-position*="right"] > input {		left: calc(100% - 8em);}
+	.ui-box[data-box-cols="4"][data-legend-pos*="center"] > input {	left: calc(50% - 4em);}
+	.ui-box[data-box-cols="4"][data-legend-pos*="right"] > input {		left: calc(100% - 8em);}
 	.ui-box[data-box-rows="4"] > input,
-	.ui-box[data-box-rows="4"][data-legend-position*="middle"] > input {	top: calc(50% - 4em);}
-	.ui-box[data-box-rows="4"][data-legend-position*="bottom"] > input {	top: calc(100% - 8em);}
+	.ui-box[data-box-rows="4"][data-legend-pos*="middle"] > input {	top: calc(50% - 4em);}
+	.ui-box[data-box-rows="4"][data-legend-pos*="bottom"] > input {	top: calc(100% - 8em);}
 
 	.ui-box[data-box-cols="5"] > input,
-	.ui-box[data-box-cols="5"][data-legend-position*="center"] > input {	left: calc(50% - 5em);}
-	.ui-box[data-box-cols="5"][data-legend-position*="right"] > input {		left: calc(100% - 10em);}
+	.ui-box[data-box-cols="5"][data-legend-pos*="center"] > input {	left: calc(50% - 5em);}
+	.ui-box[data-box-cols="5"][data-legend-pos*="right"] > input {		left: calc(100% - 10em);}
 	.ui-box[data-box-rows="5"] > input,
-	.ui-box[data-box-rows="5"][data-legend-position*="middle"] > input {	top: calc(50% - 5em);}
-	.ui-box[data-box-rows="5"][data-legend-position*="bottom"] > input {	top: calc(100% - 10em);}
+	.ui-box[data-box-rows="5"][data-legend-pos*="middle"] > input {	top: calc(50% - 5em);}
+	.ui-box[data-box-rows="5"][data-legend-pos*="bottom"] > input {	top: calc(100% - 10em);}
 
 	.ui-box[data-box-cols="6"] > input,
-	.ui-box[data-box-cols="6"][data-legend-position*="center"] > input {	left: calc(50% - 6em);}
-	.ui-box[data-box-cols="6"][data-legend-position*="right"] > input {		left: calc(100% - 12em);}
+	.ui-box[data-box-cols="6"][data-legend-pos*="center"] > input {	left: calc(50% - 6em);}
+	.ui-box[data-box-cols="6"][data-legend-pos*="right"] > input {		left: calc(100% - 12em);}
 	.ui-box[data-box-rows="6"] > input,
-	.ui-box[data-box-rows="6"][data-legend-position*="middle"] > input {	top: calc(50% - 6em);}
-	.ui-box[data-box-rows="6"][data-legend-position*="bottom"] > input {	top: calc(100% - 12em);}
+	.ui-box[data-box-rows="6"][data-legend-pos*="middle"] > input {	top: calc(50% - 6em);}
+	.ui-box[data-box-rows="6"][data-legend-pos*="bottom"] > input {	top: calc(100% - 12em);}
 
 	.ui-box[data-box-cols="7"] > input,
-	.ui-box[data-box-cols="7"][data-legend-position*="center"] > input {	left: calc(50% - 7em);}
-	.ui-box[data-box-cols="7"][data-legend-position*="right"] > input {		left: calc(100% - 14em);}
+	.ui-box[data-box-cols="7"][data-legend-pos*="center"] > input {	left: calc(50% - 7em);}
+	.ui-box[data-box-cols="7"][data-legend-pos*="right"] > input {		left: calc(100% - 14em);}
 	.ui-box[data-box-rows="7"] > input,
-	.ui-box[data-box-rows="7"][data-legend-position*="middle"] > input {	top: calc(50% - 7em);}
-	.ui-box[data-box-rows="7"][data-legend-position*="bottom"] > input {	top: calc(100% - 14em);}
+	.ui-box[data-box-rows="7"][data-legend-pos*="middle"] > input {	top: calc(50% - 7em);}
+	.ui-box[data-box-rows="7"][data-legend-pos*="bottom"] > input {	top: calc(100% - 14em);}
 
 	.ui-box[data-box-cols="8"] > input,
-	.ui-box[data-box-cols="8"][data-legend-position*="center"] > input {	left: calc(50% - 8em);}
-	.ui-box[data-box-cols="8"][data-legend-position*="right"] > input {		left: calc(100% - 16em);}
+	.ui-box[data-box-cols="8"][data-legend-pos*="center"] > input {	left: calc(50% - 8em);}
+	.ui-box[data-box-cols="8"][data-legend-pos*="right"] > input {		left: calc(100% - 16em);}
 	.ui-box[data-box-rows="8"] > input,
-	.ui-box[data-box-rows="8"][data-legend-position*="middle"] > input {	top: calc(50% - 8em);}
-	.ui-box[data-box-rows="8"][data-legend-position*="bottom"] > input {	top: calc(100% - 16em);}
+	.ui-box[data-box-rows="8"][data-legend-pos*="middle"] > input {	top: calc(50% - 8em);}
+	.ui-box[data-box-rows="8"][data-legend-pos*="bottom"] > input {	top: calc(100% - 16em);}
 
 	.ui-box[data-box-cols="9"] > input,
-	.ui-box[data-box-cols="9"][data-legend-position*="center"] > input {	left: calc(50% - 9em);}
-	.ui-box[data-box-cols="9"][data-legend-position*="right"] > input {		left: calc(100% - 18em);}
+	.ui-box[data-box-cols="9"][data-legend-pos*="center"] > input {	left: calc(50% - 9em);}
+	.ui-box[data-box-cols="9"][data-legend-pos*="right"] > input {		left: calc(100% - 18em);}
 	.ui-box[data-box-rows="9"] > input,
-	.ui-box[data-box-rows="9"][data-legend-position*="middle"] > input {	top: calc(50% - 9em);}
-	.ui-box[data-box-rows="9"][data-legend-position*="bottom"] > input {	top: calc(100% - 18em);}
+	.ui-box[data-box-rows="9"][data-legend-pos*="middle"] > input {	top: calc(50% - 9em);}
+	.ui-box[data-box-rows="9"][data-legend-pos*="bottom"] > input {	top: calc(100% - 18em);}
 
 	.ui-box[data-box-cols="10"] > input,
-	.ui-box[data-box-cols="10"][data-legend-position*="center"] > input {	left: calc(50% - 10em);}
-	.ui-box[data-box-cols="10"][data-legend-position*="right"] > input {	left: calc(100% - 20em);}
+	.ui-box[data-box-cols="10"][data-legend-pos*="center"] > input {	left: calc(50% - 10em);}
+	.ui-box[data-box-cols="10"][data-legend-pos*="right"] > input {	left: calc(100% - 20em);}
 	.ui-box[data-box-rows="10"] > input,
-	.ui-box[data-box-rows="10"][data-legend-position*="middle"] > input {	top: calc(50% - 10em);}
-	.ui-box[data-box-rows="10"].[data-legend-position*="bottom"]> input {	top: calc(100% - 20em);}
+	.ui-box[data-box-rows="10"][data-legend-pos*="middle"] > input {	top: calc(50% - 10em);}
+	.ui-box[data-box-rows="10"].[data-legend-pos*="bottom"]> input {	top: calc(100% - 20em);}
 
 	.ui-box[data-box-cols="11"] > input,
-	.ui-box[data-box-cols="11"][data-legend-position*="center"] > input {	left: calc(50% - 11em);}
-	.ui-box[data-box-cols="11"][data-legend-position*="right"] > input {	left: calc(100% - 22em);}
+	.ui-box[data-box-cols="11"][data-legend-pos*="center"] > input {	left: calc(50% - 11em);}
+	.ui-box[data-box-cols="11"][data-legend-pos*="right"] > input {	left: calc(100% - 22em);}
 	.ui-box[data-box-rows="11"] > input,
-	.ui-box[data-box-rows="11"][data-legend-position*="middle"] > input {	top: calc(50% - 11em);}
-	.ui-box[data-box-rows="11"].[data-legend-position*="bottom"]> input {	top: calc(100% - 22em);}
+	.ui-box[data-box-rows="11"][data-legend-pos*="middle"] > input {	top: calc(50% - 11em);}
+	.ui-box[data-box-rows="11"].[data-legend-pos*="bottom"]> input {	top: calc(100% - 22em);}
 
 	.ui-box[data-box-cols="12"] > input,
-	.ui-box[data-box-cols="12"][data-legend-position*="center"] > input {	left: calc(50% - 12em);}
-	.ui-box[data-box-cols="12"][data-legend-position*="right"] > input {	left: calc(100% - 24em);}
+	.ui-box[data-box-cols="12"][data-legend-pos*="center"] > input {	left: calc(50% - 12em);}
+	.ui-box[data-box-cols="12"][data-legend-pos*="right"] > input {	left: calc(100% - 24em);}
 	.ui-box[data-box-rows="12"] > input,
-	.ui-box[data-box-rows="12"][data-legend-position*="middle"] > input {	top: calc(50% - 12em);}
-	.ui-box[data-box-rows="12"].[data-legend-position*="bottom"]> input {	top: calc(100% - 24em);}
+	.ui-box[data-box-rows="12"][data-legend-pos*="middle"] > input {	top: calc(50% - 12em);}
+	.ui-box[data-box-rows="12"].[data-legend-pos*="bottom"]> input {	top: calc(100% - 24em);}
 
 
 
