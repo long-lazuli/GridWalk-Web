@@ -1,6 +1,7 @@
 $(window).on('scroll', function(){
 	if(window.location.hash)
-		$(window).scrollLeft( 0 ).scrollTop( 0 );
+		$(window).off('scroll').scrollLeft( 0 ).scrollTop( 0 );
+	console.log( history );
 });
 
 
@@ -35,11 +36,14 @@ $(function(){
 			history.pushState( {}, window.title, hash );
 	});
 
+	window.onhashchange = function(event) {
+		console.log('onhashchange');
+	}
 
 	window.onpopstate = function(event) {
-
-	if(window.location.hash || window.location.hash.length > 1 )
-		$( 'input'+window.location.hash ).attr('checked', true);
+		console.log('onpopstate');
+		if(window.location.hash || window.location.hash.length > 1 )
+			$( 'input'+window.location.hash ).attr('checked', true);
 
 	};
 
