@@ -1,20 +1,13 @@
-( function interceptAnchorAtLoading(){
+$(window).on('scroll', function(){
+	if(window.location.hash)
+		$(window).scrollLeft( 0 ).scrollTop( 0 );
+});
 
-	if(window.location.hash !== ''){
-		var loadingHash = window.location.hash;
-		history.replaceState( {}, 'Loading Page', '' );
-	}
-
-	$(function(){
-		if(loadingHash){
-			$( 'input'+loadingHash ).attr('checked', true);
-			delete loadingHash;
-		}
-	});
-
-})();
 
 $(function(){
+
+ 	$( 'input'+window.location.hash ).attr('checked', true);
+
 	$(window).on('resizeEnd', function(){
 		var H = window.innerHeight,
 		 	W = window.innerWidth,
@@ -51,10 +44,8 @@ $(function(){
 	// };
 
 	window.onpopstate = function(event) {
-	  	console.log('popstate', window.location.hash);
-//	  console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
 		$( 'input'+window.location.hash ).attr('checked', true);
-
+		
 	};
 
 
@@ -126,7 +117,7 @@ $(function(){
 			case 'previous':	$target = $(this).prev('[name="'+srcName+'"]');	break;
 			case 'next':		$target = $(this).next('[name="'+srcName+'"]');	break;
 	
-			case 'first':	$target = $('[name="'+srcName+'"]').first();	break;
+			case 'first':		$target = $('[name="'+srcName+'"]').first();	break;
 			case 'last':		$target = $('[name="'+srcName+'"]').last();	break;
 		}
 
