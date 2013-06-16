@@ -28,7 +28,6 @@ $(function(){
 	$('input').on("change", function(){
 	  	var srcId = $(this).attr('id'),
 	  		hash = '#'+srcId;
-	  console.log('input change', hash);
 		
 		$('.ui-box > .ui-body > label[for="'+srcId+'"]').addClass('active').siblings('label').removeClass('active');
 		
@@ -36,12 +35,9 @@ $(function(){
 			history.pushState( {}, window.title, hash );
 	});
 
-	window.onhashchange = function(event) {
-		console.log('onhashchange');
-	}
+
 
 	window.onpopstate = function(event) {
-		console.log('onpopstate');
 		if(window.location.hash || window.location.hash.length > 1 )
 			$( 'input'+window.location.hash ).attr('checked', true);
 
