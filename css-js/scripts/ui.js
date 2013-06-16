@@ -37,7 +37,8 @@ $(function(){
 
 
 	window.onpopstate = function(event) {
-	if(window.location.hash !== "" || window.location.hash !== "")
+
+	if(window.location.hash || window.location.hash.length > 1 )
 		$( 'input'+window.location.hash ).attr('checked', true);
 
 	};
@@ -164,7 +165,6 @@ $(function(){
 
 	// Go on the right Layout at loading.
 	$(window)
-		.trigger('resizeEnd')
-		.trigger('onpopstate');
+		.trigger('resizeEnd');
 
 });
