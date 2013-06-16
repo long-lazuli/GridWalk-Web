@@ -6,8 +6,6 @@ $(window).on('scroll', function(){
 
 $(function(){
 
- 	$( 'input'+window.location.hash ).attr('checked', true);
-
 	$(window).on('resizeEnd', function(){
 		var H = window.innerHeight,
 		 	W = window.innerWidth,
@@ -37,15 +35,11 @@ $(function(){
 			history.pushState( {}, window.title, hash );
 	});
 
-	// lorsque le Hash change, on change le layout actif :
-	// window.onhashchange = function(event){
-	// 	console.log('hashchange', window.location.hash);
-	// 	$( 'input'+window.location.hash ).click();
-	// };
 
 	window.onpopstate = function(event) {
+	if(window.location.hash !== "" || window.location.hash !== "")
 		$( 'input'+window.location.hash ).attr('checked', true);
-		
+
 	};
 
 
@@ -171,7 +165,6 @@ $(function(){
 	// Go on the right Layout at loading.
 	$(window)
 		.trigger('resizeEnd')
-		.trigger('hashchange');
-
+		.trigger('onpopstate');
 
 });
