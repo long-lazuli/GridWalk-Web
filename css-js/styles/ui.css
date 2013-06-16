@@ -22,7 +22,6 @@ body {
 	padding: 0;
 	position: absolute;
 	right: 0;
-	text-align: center; 
 	top: 0;
 	white-space: nowrap; 
 	z-index: 2;
@@ -62,16 +61,15 @@ body {
 	height: 100%;
 	margin: 0;
 	position: absolute;
-	text-align: center;
 	transition-duration: 50ms, 100ms;
 	transition-property: opacity, transform;
 	transition-timing-function: ease;
 	vertical-align: middle;
 	width: 100%;
 	z-index: 8;
-	padding: 0;
 	overflow: auto;
 	cursor: pointer;
+	white-space: normal;
 
 }
 .ui-body > label.active {
@@ -145,6 +143,9 @@ a[for][href^='#'], a[for]:not([href]) {
 
 
 /* placement de la legend : */
+
+
+
 	.ui-box														> input,
 	.ui-box[data-legend-position*="left"]						> input {	left: 0;}
 
@@ -206,6 +207,16 @@ a[for][href^='#'], a[for]:not([href]) {
 	.ui-box[data-box-rows="10"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 20em);}
 	.ui-box[data-box-rows="11"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 22em);}
 	.ui-box[data-box-rows="12"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 24em);}
+
+	.ui-box[data-legend-position*="outside"][data-legend-position*="left"] > input {
+		transform: translate( -250%, 0);}
+	.ui-box[data-legend-position*="outside"][data-legend-position*="top"] > input {
+		transform: translate( 0, -250%);}
+	.ui-box[data-legend-position*="outside"][data-legend-position*="right"] > input {
+		transform: translate(  250%, 0);}
+	.ui-box[data-legend-position*="outside"][data-legend-position*="bottom"] > input {
+		transform: translate( 0,  250%);}
+
 
 
 /* position avec les radio : */

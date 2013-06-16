@@ -21,3 +21,7 @@ body > p {
 	color: #FFF;
 	padding: 1em;
 }
+
+.ui-box {
+	text-align: center;
+}
