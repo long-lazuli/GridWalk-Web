@@ -1,15 +1,28 @@
-$(function(){
+( function interceptAnchorAtLoading(){
 
+	if(window.location.hash !== ''){
+		var loadingHash = window.location.hash;
+		history.replaceState( {}, 'Loading Page', '' );
+	}
+
+	$(function(){
+		if(loadingHash){
+			$( 'input'+loadingHash ).attr('checked', true);
+			delete loadingHash;
+		}
+	});
+
+})();
+
+$(function(){
 	$(window).on('resizeEnd', function(){
 		var H = window.innerHeight,
 		 	W = window.innerWidth,
 		 	minD = ( H <= W )? H : W,
 		 	boxSize = $('.ui-box').is('[data-box-size]') ? $('.ui-box').data('box-size') : '60%';
-
-		console.log(boxSize);
 			
 		if( boxSize[boxSize.length -1] == "%"){
-			boxSize = minD * parseInt( boxSize.substr( 0, boxSize.length -1 ) ) / 100;
+			boxSize = minD * parseInt( boxSize.substr( 0, boxSize.length -1 ), 10 ) / 100;
 		}
 
 		$('.ui-box').css({
@@ -18,14 +31,31 @@ $(function(){
 		});
 
 	});
-	$(window).trigger('resizeEnd');
 
 // evenements :
 	$('input').on("change", function(){
-	  	var srcId = $(this).attr('id');
+	  	var srcId = $(this).attr('id'),
+	  		hash = '#'+srcId;
+	  console.log('input change', hash);
+		
 		$('.ui-box > .ui-body > label[for="'+srcId+'"]').addClass('active').siblings('label').removeClass('active');
+		
+		if( window.location.hash !== hash)
+			history.pushState( {}, window.title, hash );
 	});
 
+	// lorsque le Hash change, on change le layout actif :
+	// window.onhashchange = function(event){
+	// 	console.log('hashchange', window.location.hash);
+	// 	$( 'input'+window.location.hash ).click();
+	// };
+
+	window.onpopstate = function(event) {
+	  	console.log('popstate', window.location.hash);
+//	  console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
+		$( 'input'+window.location.hash ).attr('checked', true);
+
+	};
 
 
 // calcule le nombre de colonnes et de lignes, servira après.
@@ -110,7 +140,6 @@ $(function(){
 
 
 
-
 // le tricks du clavier
 	$(document).on('keydown', function(e){
 		// declaration
@@ -148,11 +177,10 @@ $(function(){
 
 
 
-
-// Bientôt le tricks de la souris !
-
-
-
+	// Go on the right Layout at loading.
+	$(window)
+		.trigger('resizeEnd')
+		.trigger('hashchange');
 
 
 });

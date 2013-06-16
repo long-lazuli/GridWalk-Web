@@ -3,34 +3,37 @@
 }
 html {
 	height: 100%;
+	overflow: hidden;
 }
 body {
-	background-color: #666;
 	height: 100%;
 	overflow: hidden;
 }
 
 .ui-box { 
-	background-color: #999;
+	/* default size: */
+	height: 450px; 
+	width: 450px;
+
 	border: 0;
 	bottom: 0;
-	height: 450px; 
-	
 	left: 0; 
 	margin: auto;	
 	padding: 0;
-	position: absolute; 
+	position: absolute;
 	right: 0;
 	text-align: center; 
 	top: 0;
 	white-space: nowrap; 
-	width: 450px;
 	z-index: 2;
 
 }
 
 
-.ui-box > input { cursor: pointer; text-align: center; display: inline-block; height: 2em; line-height: 100%; margin: 0; opacity: 0; position: absolute; text-align: center; width: 2em; z-index: 32; }
+.ui-box > input {cursor: pointer; text-align: center; display: inline-block; height: 2em; line-height: 100%; margin: 0; position: absolute; text-align: center; width: 2em; z-index: 32; }
+.ui-box > input {opacity: 0;}
+.ui-box[data-legend] > input {	opacity: 1;}
+
 /*.ui-box > input:before {
 	content: attr(id);
 	display: block;
@@ -60,43 +63,26 @@ body {
 	margin: 0;
 	position: absolute;
 	text-align: center;
-	transition-duration: 50ms;
-	transition-property: opacity;
+	transition-duration: 50ms, 100ms;
+	transition-property: opacity, transform;
 	transition-timing-function: ease;
 	vertical-align: middle;
 	width: 100%;
 	z-index: 8;
 	padding: 0;
+	overflow: auto;
+	cursor: pointer;
+
+}
+.ui-body > label.active {
+	cursor: default;
 }
 
-.ui-box > .ui-body > label > h3,
-.ui-box > .ui-body > label:empty:before,
-.ui-box > .ui-body > label > p,
-.ui-box > .ui-body > label:empty:after {
-	box-sizing: border-box;
-	display: block;
-	padding: 0.5em 1em;
-	width: calc(100% -2em);
-	max-width: calc(100% -2em);
-	max-height: calc(100% -2em);
-	white-space: normal;
-}
-.ui-box > .ui-body > label > h3,
-.ui-box > .ui-body > label:empty:before {
-	content: attr(for);
-	font-weight: bold;
-	font-size: 1.2em;
-	margin: 1em 1em 0;
-	border: 2px dotted #999;
-	border-radius: 1em;
-	box-shadow: inset -1em -1em 1em rgba(153, 153, 153, 0.25);
-}
-.ui-box > .ui-body > label > p,
-.ui-box > .ui-body > label:empty:after {
-	content: attr(class);
-	margin: 0 1.2em 1.2em;
-}
 
+a[for][href^='#'], a[for]:not([href]) {
+	text-decoration: underline;
+	cursor: pointer;
+}
 
 /* légendes : */
 	/* colonnes : */
@@ -157,77 +143,68 @@ body {
 		.ui-box > .ui-body > label.ui-row-12 {	top: 1100%;}
 
 
-.ui-box[data-legend] > input {
-	opacity: 1;
-}
-
 
 /* placement de la legend : */
-	.ui-box > input,
-	.ui-box[data-legend-position*="left"] > input {							left: 0;}
+	.ui-box														> input,
+	.ui-box[data-legend-position*="left"]						> input {	left: 0;}
 
-	.ui-box > input,
-	.ui-box[data-legend-position*="top"] > input {							top: 0;}
-
-
-	.ui-box[data-legend-position*="center"] > input {						left:	calc(  50%	- 1em);}
-	.ui-box[data-legend-position*="middle"] > input {						top:	calc(  50%	- 1em);}
-	.ui-box[data-legend-position*="bottom"] > input {						top:	calc( 100%	- 2em);}
-
-
+	.ui-box[data-legend-position*="center"] 					> input,
+	.ui-box[data-box-cols="1"][data-legend-position*="center"]	> input {	left:	calc(  50%	-  1em);}
 	.ui-box[data-box-cols="2"][data-legend-position*="center"]	> input {	left:	calc(  50%	-  2em);}
-	.ui-box[data-box-cols="2"][data-legend-position*="right"]	> input {	left:	calc( 100%	-  4em);}
-	.ui-box[data-box-rows="2"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  2em);}
-	.ui-box[data-box-rows="2"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	-  4em);}
-
 	.ui-box[data-box-cols="3"][data-legend-position*="center"]	> input {	left:	calc(  50%	-  3em);}
-	.ui-box[data-box-cols="3"][data-legend-position*="right"]	> input {	left:	calc( 100%	-  6em);}
-	.ui-box[data-box-rows="3"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  3em);}
-	.ui-box[data-box-rows="3"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	-  6em);}
-
 	.ui-box[data-box-cols="4"][data-legend-position*="center"]	> input {	left:	calc(  50%	-  4em);}
-	.ui-box[data-box-cols="4"][data-legend-position*="right"]	> input {	left:	calc( 100%	-  8em);}
-	.ui-box[data-box-rows="4"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  4em);}
-	.ui-box[data-box-rows="4"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	-  8em);}
-
 	.ui-box[data-box-cols="5"][data-legend-position*="center"]	> input {	left:	calc(  50%	-  5em);}
-	.ui-box[data-box-cols="5"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 10em);}
-	.ui-box[data-box-rows="5"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  5em);}
-	.ui-box[data-box-rows="5"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 10em);}
-
 	.ui-box[data-box-cols="6"][data-legend-position*="center"]	> input {	left:	calc(  50%	-  6em);}
-	.ui-box[data-box-cols="6"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 12em);}
-	.ui-box[data-box-rows="6"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  6em);}
-	.ui-box[data-box-rows="6"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 12em);}
-
 	.ui-box[data-box-cols="7"][data-legend-position*="center"]	> input {	left:	calc(  50%	-  7em);}
-	.ui-box[data-box-cols="7"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 14em);}
-	.ui-box[data-box-rows="7"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  7em);}
-	.ui-box[data-box-rows="7"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 14em);}
-
 	.ui-box[data-box-cols="8"][data-legend-position*="center"]	> input {	left:	calc(  50%	-  8em);}
-	.ui-box[data-box-cols="8"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 16em);}
-	.ui-box[data-box-rows="8"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  8em);}
-	.ui-box[data-box-rows="8"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 16em);}
-
 	.ui-box[data-box-cols="9"][data-legend-position*="center"]	> input {	left:	calc(  50%	-  9em);}
-	.ui-box[data-box-cols="9"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 18em);}
-	.ui-box[data-box-rows="9"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  9em);}
-	.ui-box[data-box-rows="9"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 18em);}
-
 	.ui-box[data-box-cols="10"][data-legend-position*="center"]	> input {	left:	calc(  50%	- 10em);}
-	.ui-box[data-box-cols="10"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 20em);}
-	.ui-box[data-box-rows="10"][data-legend-position*="middle"]	> input {	top:	calc(  50%	- 10em);}
-	.ui-box[data-box-rows="10"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 20em);}
-
 	.ui-box[data-box-cols="11"][data-legend-position*="center"]	> input {	left:	calc(  50%	- 11em);}
-	.ui-box[data-box-cols="11"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 22em);}
-	.ui-box[data-box-rows="11"][data-legend-position*="middle"]	> input {	top:	calc(  50%	- 11em);}
-	.ui-box[data-box-rows="11"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 22em);}
-
 	.ui-box[data-box-cols="12"][data-legend-position*="center"]	> input {	left:	calc(  50%	- 12em);}
+
+	.ui-box[data-box-cols="1"][data-legend-position*="right"]	> input {	left:	calc( 100%	-  2em);}
+	.ui-box[data-box-cols="2"][data-legend-position*="right"]	> input {	left:	calc( 100%	-  4em);}
+	.ui-box[data-box-cols="3"][data-legend-position*="right"]	> input {	left:	calc( 100%	-  6em);}
+	.ui-box[data-box-cols="4"][data-legend-position*="right"]	> input {	left:	calc( 100%	-  8em);}
+	.ui-box[data-box-cols="5"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 10em);}
+	.ui-box[data-box-cols="6"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 12em);}
+	.ui-box[data-box-cols="7"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 14em);}
+	.ui-box[data-box-cols="8"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 16em);}
+	.ui-box[data-box-cols="9"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 18em);}
+	.ui-box[data-box-cols="10"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 20em);}
+	.ui-box[data-box-cols="11"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 22em);}
 	.ui-box[data-box-cols="12"][data-legend-position*="right"]	> input {	left:	calc( 100%	- 24em);}
+
+
+	.ui-box 													> input,
+	.ui-box[data-legend-position*="top"] 						> input {	top: 0;}
+
+	.ui-box[data-legend-position*="middle"] 					> input,
+	.ui-box[data-box-rows="1"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  1em);}
+	.ui-box[data-box-rows="2"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  2em);}
+	.ui-box[data-box-rows="3"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  3em);}
+	.ui-box[data-box-rows="4"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  4em);}
+	.ui-box[data-box-rows="5"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  5em);}
+	.ui-box[data-box-rows="6"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  6em);}
+	.ui-box[data-box-rows="7"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  7em);}
+	.ui-box[data-box-rows="8"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  8em);}
+	.ui-box[data-box-rows="9"][data-legend-position*="middle"]	> input {	top:	calc(  50%	-  9em);}
+	.ui-box[data-box-rows="10"][data-legend-position*="middle"]	> input {	top:	calc(  50%	- 10em);}
+	.ui-box[data-box-rows="11"][data-legend-position*="middle"]	> input {	top:	calc(  50%	- 11em);}
 	.ui-box[data-box-rows="12"][data-legend-position*="middle"]	> input {	top:	calc(  50%	- 12em);}
+
+	.ui-box[data-legend-position*="bottom"] 					> input,
+	.ui-box[data-box-rows="1"][data-legend-position*="bottom"]  > input {	top:	calc( 100%	- 2em);}
+	.ui-box[data-box-rows="2"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	-  4em);}
+	.ui-box[data-box-rows="3"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	-  6em);}
+	.ui-box[data-box-rows="4"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	-  8em);}
+	.ui-box[data-box-rows="5"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 10em);}
+	.ui-box[data-box-rows="6"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 12em);}
+	.ui-box[data-box-rows="7"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 14em);}
+	.ui-box[data-box-rows="8"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 16em);}
+	.ui-box[data-box-rows="9"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 18em);}
+	.ui-box[data-box-rows="10"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 20em);}
+	.ui-box[data-box-rows="11"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 22em);}
 	.ui-box[data-box-rows="12"][data-legend-position*="bottom"]	> input {	top:	calc( 100%	- 24em);}
 
 
@@ -258,97 +235,3 @@ body {
 	.ui-box > .ui-row-11:checked ~ .ui-body {	margin-top:  -1000%;}
 	.ui-box > .ui-row-12:checked ~ .ui-body {	margin-top:  -1100%;}
 
-.ui-body > label{
-	background-repeat: no-repeat;
-	background-size: cover;
-	color: rgba(0, 0, 0, 0);
-	cursor: pointer;
-	transition-duration: 100ms;
-	transition-property: transform ;
-	transition-timing-function: ease;
-}
-
-.ui-body > label,
-.ui-body > label:active ~ .ui-body > label.active,
-.ui-body > label:hover ~ .ui-body > label.active {
-	border: 2px dashed rgba(0, 0, 0, 0.25);
-}
-
-.ui-body > label:active
-{
-	opacity: 1;
-	transform:	scale(1.1);
-	box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.5);
-	z-index: 256;
-}
-.ui-body > label:active:hover > *
-.ui-body > label:active > *
-{
-	opacity: 1;
-}
-
-
-.ui-body > label > *{
-	opacity: 0;
-	transition-duration: 50ms;
-	transition-property: opacity;
-	transition-timing-function: ease;
-}
-
-.ui-body > label:hover{
-	border-color: rgba(0, 0, 0, 0.75);
-	color: rgba(0, 0, 0, 0.5);
-}
-
-.ui-body > label:hover > *{
-	opacity: 0.5;
-}
-.ui-body > label.active{
-}
-
-.ui-body > label.active {
-	border: 2px solid #000;
-	opacity: 1;
-	z-index: 128;
-	color: #000;
-	cursor: default;
-}
-
-.ui-body > label.active > * {
-	opacity: 1!important;
-}
-
-
-
-
-
-/* -------------------------------------------------------------------- */
-
-
-
-
-.ui-box > input.ui-rotate-90:checked ~ .ui-body {	transform: rotate( 90deg);	}
-.ui-box > input.ui-rotate-180:checked ~ .ui-body {	transform: rotate(180deg);	}
-.ui-box > input.ui-rotate-270:checked ~ .ui-body {	transform: rotate(270deg);	}
-.ui-box > input.ui-rotate-360:checked ~ .ui-body {	transform: rotate(360deg);	}
-
-.ui-body > label.ui-rotate-90 {		transform: rotate( -90deg);	}
-.ui-body > label.ui-rotate-180 {	transform: rotate(-180deg);	}
-.ui-body > label.ui-rotate-270 {	transform: rotate(-270deg);	}
-.ui-body > label.ui-rotate-360 {	transform: rotate(-360deg);	}
-
-.ui-box > input.ui-rotate-90:checked ~ .ui-body { transform-origin: 250% 350%;}
-.ui-box > input.ui-rotate-180:checked ~ .ui-body { transform-origin: 250% 450%;}
-.ui-box > input.ui-rotate-270:checked ~ .ui-body { transform-origin: 350% 350%;}
-
-.ui-box[data-box-rows="3"] > input.ui-rotate-90:checked ~ .ui-body { transform-origin: 150% 150%;}
-.ui-box[data-box-rows="3"] > input.ui-rotate-180:checked ~ .ui-body { transform-origin: 150% 200%;}
-.ui-box[data-box-rows="3"] > input.ui-rotate-270:checked ~ .ui-body { transform-origin: 50% 250%;}
-
-.ui-box[data-box-rows="4"] > input.ui-rotate-90:checked ~ .ui-body { transform-origin: 250% 350%;}
-.ui-box[data-box-rows="4"] > input.ui-rotate-180:checked ~ .ui-body { transform-origin: 250% 450%;}
-.ui-box[data-box-rows="4"] > input.ui-rotate-270:checked ~ .ui-body { transform-origin: 350% 350%;}
-
-.ui-box[data-box-rows="5"] > input.ui-rotate-90:checked ~ .ui-body { transform-origin: 250% 350%;}
-.ui-box[data-box-rows="5"] > input.ui-rotate-180:checked ~ .ui-body { transform-origin: 250% 450%;}
-.ui-box[data-box-rows="5"] > input.ui-rotate-270:checked ~ .ui-body { transform-origin: 350% 350%;}

@@ -1,0 +1,16 @@
+
+
+label[for="Demo"] {		background-color: 	#DFF;}
+
+label[for="Home"] {		background-color: 	#FFD;}
+
+label[for="Doc"] {		background-color: 	#FDF;}
+
+body {
+	background-color: #666;
+	text-align: center;
+}
+h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
+	color: inherit;
+	text-decoration: inherit;
+}

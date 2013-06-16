@@ -8,3 +8,16 @@
 .ui-box:hover input{
 	opacity: 1;
 }
+
+body {
+	background-color: #000;
+	margin: 0;
+}
+body > p {
+	position: absolute;
+	z-index: 256;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.75);
+	color: #FFF;
+	padding: 1em;
+}

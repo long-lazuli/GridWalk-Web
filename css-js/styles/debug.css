@@ -1,0 +1,130 @@
+
+.ui-box > .ui-body > label > h3,
+.ui-box > .ui-body > label:empty:before,
+.ui-box > .ui-body > label > p,
+.ui-box > .ui-body > label:empty:after {
+	box-sizing: border-box;
+	display: block;
+	padding: 0.5em 1em;
+	width: calc(100% -2em);
+	max-width: calc(100% -2em);
+	max-height: calc(100% -2em);
+	white-space: normal;
+}
+.ui-box > .ui-body > label > h3,
+.ui-box > .ui-body > label:empty:before {
+	content: attr(for);
+	font-weight: bold;
+	font-size: 1.2em;
+	margin: 1em 1em 0;
+	border: 2px dotted #999;
+	border-radius: 1em;
+	box-shadow: inset -1em -1em 1em rgba(153, 153, 153, 0.25);
+}
+.ui-box > .ui-body > label > p,
+.ui-box > .ui-body > label:empty:after {
+	content: attr(class);
+	margin: 0 1.2em 1.2em;
+}
+
+
+
+
+
+
+
+/* -------------------------------------------------------------------- */
+
+
+
+
+.ui-box > input.ui-rotate-90:checked ~ .ui-body {	transform: rotate( 90deg);	}
+.ui-box > input.ui-rotate-180:checked ~ .ui-body {	transform: rotate(180deg);	}
+.ui-box > input.ui-rotate-270:checked ~ .ui-body {	transform: rotate(270deg);	}
+.ui-box > input.ui-rotate-360:checked ~ .ui-body {	transform: rotate(360deg);	}
+
+.ui-body > label.ui-rotate-90 {		transform: rotate( -90deg);	}
+.ui-body > label.ui-rotate-180 {	transform: rotate(-180deg);	}
+.ui-body > label.ui-rotate-270 {	transform: rotate(-270deg);	}
+.ui-body > label.ui-rotate-360 {	transform: rotate(-360deg);	}
+
+.ui-box > input.ui-rotate-90:checked ~ .ui-body { transform-origin: 250% 350%;}
+.ui-box > input.ui-rotate-180:checked ~ .ui-body { transform-origin: 250% 450%;}
+.ui-box > input.ui-rotate-270:checked ~ .ui-body { transform-origin: 350% 350%;}
+
+.ui-box[data-box-rows="3"] > input.ui-rotate-90:checked ~ .ui-body { transform-origin: 150% 150%;}
+.ui-box[data-box-rows="3"] > input.ui-rotate-180:checked ~ .ui-body { transform-origin: 150% 200%;}
+.ui-box[data-box-rows="3"] > input.ui-rotate-270:checked ~ .ui-body { transform-origin: 50% 250%;}
+
+.ui-box[data-box-rows="4"] > input.ui-rotate-90:checked ~ .ui-body { transform-origin: 250% 350%;}
+.ui-box[data-box-rows="4"] > input.ui-rotate-180:checked ~ .ui-body { transform-origin: 250% 450%;}
+.ui-box[data-box-rows="4"] > input.ui-rotate-270:checked ~ .ui-body { transform-origin: 350% 350%;}
+
+.ui-box[data-box-rows="5"] > input.ui-rotate-90:checked ~ .ui-body { transform-origin: 250% 350%;}
+.ui-box[data-box-rows="5"] > input.ui-rotate-180:checked ~ .ui-body { transform-origin: 250% 450%;}
+.ui-box[data-box-rows="5"] > input.ui-rotate-270:checked ~ .ui-body { transform-origin: 350% 350%;}
+
+
+
+
+
+/* ------------------------- */
+
+
+.ui-body > label{
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: rgba(0, 0, 0, 0);
+	cursor: pointer;
+	transition-duration: 100ms;
+	transition-property: transform ;
+	transition-timing-function: ease;
+}
+
+.ui-body > label,
+.ui-body > label:active ~ .ui-body > label.active,
+.ui-body > label:hover ~ .ui-body > label.active {
+	border: 2px dashed rgba(0, 0, 0, 0.25);
+}
+.ui-body > label:active
+{
+	z-index: 256;
+}
+.ui-body > label:active:hover > *
+.ui-body > label:active > *
+{
+	opacity: 1;
+}
+
+
+.ui-body > label > *{
+	opacity: 0;
+	transition-duration: 50ms;
+	transition-property: opacity;
+	transition-timing-function: ease;
+}
+
+.ui-body > label:hover{
+	border-color: rgba(0, 0, 0, 0.75);
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.ui-body > label:hover > *{
+	opacity: 0.5;
+}
+.ui-body > label.active{
+}
+
+.ui-body > label.active {
+	border: 2px solid #000;
+	opacity: 1;
+	z-index: 128;
+	color: #000;
+	cursor: default;
+}
+
+.ui-body > label.active > * {
+	opacity: 1!important;
+}
+
+
