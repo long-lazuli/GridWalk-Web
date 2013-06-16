@@ -164,7 +164,8 @@ $(function(){
 
 
 	// Go on the right Layout at loading.
-	$(window)
-		.trigger('resizeEnd');
+	$(window).trigger('resizeEnd');
+	if(window.location.hash) $(window).trigger('onpopstate');
+
 
 });
