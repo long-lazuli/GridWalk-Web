@@ -1,7 +1,6 @@
 $(window).on('scroll', function(){
 	if(window.location.hash)
 		$(window).off('scroll').scrollLeft( 0 ).scrollTop( 0 );
-	console.log( history );
 });
 
 
