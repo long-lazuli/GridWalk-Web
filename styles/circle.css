@@ -1,0 +1,57 @@
+label[for='top_left'] { border-top-left-radius: 50%;}
+label[for='top_right'] { border-top-right-radius: 50%;}
+label[for='bottom_left'] { border-bottom-left-radius: 50%;}
+label[for='bottom_right'] { border-bottom-right-radius: 50%;}
+
+*[for='top_left'],
+a[href='#top_left'] {		background-color: hsla( 305, 45%, 60%, 1 );}
+*[for='top'],
+a[href='#top'] {			background-color: hsla( 350, 45%, 60%, 1 );}
+*[for='top_right'],
+a[href='#top_right'] {		background-color: hsla(  35, 45%, 60%, 1 );}
+*[for='right'],
+a[href='#right'] {			background-color: hsla(  80, 45%, 60%, 1 );}
+*[for='bottom_right'],
+a[href='#bottom_right'] {	background-color: hsla( 125, 45%, 60%, 1 );}
+*[for='bottom'],
+a[href='#bottom'] {			background-color: hsla( 170, 45%, 60%, 1 );}
+*[for='bottom_left'],
+a[href='#bottom_left'] {	background-color: hsla( 215, 45%, 60%, 1 );}
+*[for='left'],
+a[href='#left'] {			background-color: hsla( 260, 45%, 60%, 1 );}
+
+
+.ui-body > label {
+	border: 0.1em solid #000;
+	vertical-align: middle!important;
+	text-align: center;
+}
+.ui-body > label[for*='top'] {		border-top-width: 0.2em;}
+.ui-body > label[for*='left'] {		border-left-width: 0.2em;}
+.ui-body > label[for*='bottom'] {	border-bottom-width: 0.2em;}
+.ui-body > label[for*='right'] {	border-right-width: 0.2em;}
+
+.ui-body > label > *:only-child {
+	margin-top: 50%;
+	transform: translate( -50%, -50%);
+	position: absolute;
+}
+
+a {
+	color: inherit;
+	text-decoration: inherit;
+	font-family: inherit;
+	border: 0.2em dashed #000;
+	border-radius: 0.5em;
+	padding: 0.25em 0.5em;
+	margin: -.25em .25em;
+}
+
+a[href^='#'] {
+	padding: 1.5em;
+	margin: -0.5em 0.5em;
+	border: 0.2em solid #000;
+	border-radius: 50%;
+	background-image: radial-gradient( rgba(255,255,255,0.25), transparent);
+	background-position: 20% 30%;
+}
