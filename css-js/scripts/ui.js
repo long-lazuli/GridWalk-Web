@@ -5,6 +5,7 @@ $(window).on('scroll', function(){
 
 
 $(function(){
+	document.original_title = document.title;
 
 	if($('.ui-box').is('[data-auto-resize]') ){
 		$(window).on('resizeEnd', function(){
@@ -37,16 +38,24 @@ $(function(){
 		
 		$('.ui-box > .ui-body > label[for="'+srcId+'"]').addClass('active').siblings('label').removeClass('active');
 		
-		if( window.location.hash !== hash)
-			history.pushState( {}, window.title, hash );
+		if( window.location.hash !== hash){
+			var $label = $('[for='+srcId+']');
+			document.title = document.original_title + ( $label.is('[title]')? ' > '+ $label.attr('title') : '' );
+			history.pushState( {}, document.title, hash );
+		}
 	});
 
 
-
+history.onpushstate = function(event){
+	console.log('pushstate');
+};
 	window.onpopstate = function(event) {
-		if(window.location.hash || window.location.hash.length > 1 )
+		console.log('popstate');
+		if(window.location.hash || window.location.hash.length > 1 ){
+			var $label = $('[for='+window.location.hash+']');
+			document.title = document.original_title + ( $label.is('[title]')? ' > '+ $label.attr('title') : '' );
 			$( 'input'+window.location.hash ).attr('checked', true);
-
+		}
 	};
 
 
