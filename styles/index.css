@@ -75,3 +75,27 @@ label p {
     transform: translate(-50%, -50%);
 }
 
+body > h1.hovering.centered ~ .ui-box[data-box-style="cover"] > .ui-body > label {
+	padding-top: 4em;
+}
+*[for='top_left'],
+a[href='#top_left'] {		background-color: hsla( 305, 45%, 60%, 1 );}
+*[for='top'],
+a[href='#top'] {			background-color: hsla( 350, 45%, 60%, 1 );}
+*[for='top_right'],
+a[href='#top_right'] {		background-color: hsla(  35, 45%, 60%, 1 );}
+*[for='right'],
+a[href='#right'] {			background-color: hsla(  80, 45%, 60%, 1 );}
+*[for='bottom_right'],
+a[href='#bottom_right'] {	background-color: hsla( 125, 45%, 60%, 1 );}
+*[for='bottom'],
+a[href='#bottom'] {			background-color: hsla( 170, 45%, 60%, 1 );}
+*[for='bottom_left'],
+a[href='#bottom_left'] {	background-color: hsla( 215, 45%, 60%, 1 );}
+*[for='left'],
+a[href='#left'] {			background-color: hsla( 260, 45%, 60%, 1 );}
+.ui-body > label > *:only-child {
+	margin-top: 50%;
+	transform: translate( -50%, -50%);
+	position: absolute;
+}

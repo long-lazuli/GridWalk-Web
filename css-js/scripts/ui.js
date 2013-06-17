@@ -10,17 +10,22 @@ $(function(){
 		$(window).on('resizeEnd', function(){
 			var H = window.innerHeight,
 			 	W = window.innerWidth,
-			 	minD = ( H <= W )? H : W,
+			 	landscape = ( H <= W ),
+			 	D = landscape? {min: H, max: W} : {min: W, max: H},
+			 	style = $('.ui-box').is('[data-box-style]') ? $('.ui-box').data('box-style') : 'contain',
+				refD = style == 'cover' ? D.max : D.min,
 
 			 	boxSize = $('.ui-box').is('[data-box-size]') ? $('.ui-box').data('box-size') : '60%';
-				
-			if( boxSize[boxSize.length -1] == "%"){
-				boxSize = minD * parseInt( boxSize.substr( 0, boxSize.length -1 ), 10 ) / 100;
-			}
+				pxBoxSize = boxSize[boxSize.length -1] == "%" ? (refD*parseInt(boxSize.substr(0,boxSize.length-1),10)/100) : boxSize,
+				padSize = style == 'cover' ? (pxBoxSize - D.min) /2 : 'auto' ;
+				padding = landscape? padSize+'px auto' : 'auto '+padSize+'px';
+				console.log( landscape, padding );
+
 
 			$('.ui-box').css({
-				width:  boxSize,
-				height: boxSize
+				width:  pxBoxSize,
+				height: pxBoxSize,
+				padding: padding
 			});
 
 		});
