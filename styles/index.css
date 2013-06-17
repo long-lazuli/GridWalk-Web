@@ -66,3 +66,12 @@ label p {
 	margin-left: 50%;
     transform: translate(-50%, 0px);
 }
+
+.middleOfPage {
+    position: absolute;
+    z-index: 512;
+	left: 50%;
+	top: 50%;
+    transform: translate(-50%, -50%);
+}
+

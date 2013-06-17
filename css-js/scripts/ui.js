@@ -6,23 +6,25 @@ $(window).on('scroll', function(){
 
 $(function(){
 
-	$(window).on('resizeEnd', function(){
-		var H = window.innerHeight,
-		 	W = window.innerWidth,
-		 	minD = ( H <= W )? H : W,
-		 	boxSize = $('.ui-box').is('[data-box-size]') ? $('.ui-box').data('box-size') : '60%';
-			
-		if( boxSize[boxSize.length -1] == "%"){
-			boxSize = minD * parseInt( boxSize.substr( 0, boxSize.length -1 ), 10 ) / 100;
-		}
+	if($('.ui-box').is('[data-auto-resize]') ){
+		$(window).on('resizeEnd', function(){
+			var H = window.innerHeight,
+			 	W = window.innerWidth,
+			 	minD = ( H <= W )? H : W,
 
-		$('.ui-box').css({
-			width:  boxSize,
-			height: boxSize
+			 	boxSize = $('.ui-box').is('[data-box-size]') ? $('.ui-box').data('box-size') : '60%';
+				
+			if( boxSize[boxSize.length -1] == "%"){
+				boxSize = minD * parseInt( boxSize.substr( 0, boxSize.length -1 ), 10 ) / 100;
+			}
+
+			$('.ui-box').css({
+				width:  boxSize,
+				height: boxSize
+			});
+
 		});
-
-	});
-
+	}
 // evenements :
 	$('input').on("change", function(){
 	  	var srcId = $(this).attr('id'),
