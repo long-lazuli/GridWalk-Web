@@ -94,7 +94,11 @@ a[href='#bottom'] {			background-color: hsla( 170, 45%, 60%, 1 );}
 a[href='#bottom_left'] {	background-color: hsla( 215, 45%, 60%, 1 );}
 *[for='left'],
 a[href='#left'] {			background-color: hsla( 260, 45%, 60%, 1 );}
-.ui-body > label > *:only-child {
+
+.ui-body > label.center {
+	text-align: center;
+}
+.ui-body > label.center > *:only-child {
 	margin-top: 50%;
 	transform: translate( -50%, -50%);
 	position: absolute;
