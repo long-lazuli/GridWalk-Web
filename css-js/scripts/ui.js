@@ -178,7 +178,9 @@ history.onpushstate = function(event){
 		console.log('touchstart');
 	});
 	$(document).on('touchmove', function(e){
-		console.log('touchmove');
+		console.log('touchmove', e);
+
+
 	});
 	$(document).on('touchend', function(e){
 		console.log('touchend');
