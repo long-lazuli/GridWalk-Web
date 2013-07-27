@@ -174,6 +174,51 @@ history.onpushstate = function(event){
 	});
 
 
+	$(document).on('touchstart', function(e){
+		console.log('touchstart');
+	});
+	$(document).on('touchmove', function(e){
+		console.log('touchmove');
+	});
+	$(document).on('touchend', function(e){
+		console.log('touchend');
+	});
+
+// le tricks du clavier
+	//$(document).on('touchstart', function(e){
+
+
+		// // declaration
+	//  	var code = e.rkeyCode ? e.keyCode : e.which,
+		// 	target = false;
+
+		// //console.log(code);
+	//  	// selon la touche qui est appuyé, on fait quekchose :
+	//    switch(code){
+		// 	case 37:	target = 'left';		break;
+		// 	case 38:	target = 'top';			break;
+		// 	case 39:	target = 'right';		break;
+		// 	case 40:	target = 'bottom';		break;
+
+		// 	case 33:	target = 'previous';	break;// pageUp
+		// 	case 34:	target = 'next';		break;// pageDown
+
+		// 	case 36:	target = 'first';		break;// debut
+		// 	case 35:	target = 'last';		break;// end
+		// }
+
+		// // si on fait quekchose, on annule le comportement par défault:
+		// if(target){
+
+		// 	$('input:checked').changeTo(target);
+		// 	e.preventDefault();
+		// 	e.stopPropagation();
+		// 	return false;
+		// }
+
+	//});
+
+
 
 
 
