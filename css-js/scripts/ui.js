@@ -179,7 +179,7 @@ history.onpushstate = function(event){
 	});
 	$(document).on('touchmove', function(e){
 		console.log('touchmove');
-		console.error(e);
+		console.log(e);
 
 
 	});
